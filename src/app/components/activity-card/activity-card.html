@@ -1,0 +1,7 @@
+<div>
+    @for(activity of taskManegmentService.activity() ;track activity){
+        <p>{{activity.type}}</p>
+        <p>{{activity.date | date}}</p>
+        <p>{{findTaskName(activity.taskId)}}</p>
+    }
+</div>

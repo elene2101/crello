@@ -7,6 +7,7 @@
   createdAt: Date;
 }
 
+
 export const INITIAL_TASKS: Task[] = [
   { id: '1', title: 'Fix Layout Issues', description: 'Fix the padding on mobile', status: 'todo', priority: 'high', createdAt: new Date() },
   { id: '2', title: 'API Integration', description: 'Connect the dashboard to the backend', status: 'inprogress', priority: 'medium', createdAt: new Date() },

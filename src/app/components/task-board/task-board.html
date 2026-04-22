@@ -1,1 +1,11 @@
-<p>task-board works!</p>
+<input placeholder="Search" [formControl]="searchControl">
+<button (click)="addTask()">Add Task</button>
+
+<div class="tasksContainer">
+    <app-task-row title="To Do" [tasksList]="taskManegmentService.todo()"></app-task-row>
+    <app-task-row title="In Progress" [tasksList]="taskManegmentService.inProgress()"></app-task-row>
+    <app-task-row title="Done" [tasksList]="taskManegmentService.done()"></app-task-row>
+
+</div>
+
+<app-activity-card></app-activity-card>

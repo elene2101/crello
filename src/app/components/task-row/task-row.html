@@ -1,0 +1,28 @@
+
+<div>
+    <h1>{{title()}}</h1>
+
+    @for(task of tasksList(); track task.id){
+
+        <mat-form-field>
+        <mat-select
+        [formControl]="statusControl" 
+        (selectionChange)="onSelectionChange($event, task.id)"
+        >
+            @for (status of ['todo', 'inprogress', 'done']; track status) {
+            <mat-option [value]="status">
+                {{status}}
+            </mat-option>
+            }
+        </mat-select>
+        </mat-form-field>
+
+        <div>
+            <p>{{task.title}}</p>
+            <p>{{task.description}}</p>
+            <p>{{task.createdAt | date}}</p>
+            <p>{{task.priority}}</p>
+
+        </div>
+    }
+</div>

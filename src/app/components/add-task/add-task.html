@@ -1,0 +1,38 @@
+<form [formGroup]="taskForm">
+    <mat-form-field class="example-full-width">
+        <mat-label>სახელი</mat-label>
+        <input matInput formControlName="title">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+        <mat-label>აღწერა</mat-label>
+        <textarea matInput formControlName="description"></textarea>
+    </mat-form-field>
+
+    <mat-form-field>
+    <mat-label>სტატუსი</mat-label>
+    <mat-select formControlName="status">
+        @for (status of ['todo', 'inprogress', 'done']; track status) {
+        <mat-option [value]="status">
+            {{status}}
+        </mat-option>
+        }
+    </mat-select>
+    </mat-form-field>
+
+    <mat-form-field>
+    <mat-label>პრიორიტეტი</mat-label>
+    <mat-select formControlName="priority">
+        @for (priority of ['low', 'medium', 'high']; track priority) {
+        <mat-option [value]="priority">
+            {{priority}}
+        </mat-option>
+        }
+    </mat-select>
+    </mat-form-field>
+
+<button (click)="addTask()">Add</button>
+<button (click)="close()">Cancel</button>
+
+    
+</form>
